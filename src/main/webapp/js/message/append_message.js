@@ -213,7 +213,7 @@ function appendMessage(data, config) {
         }
 
         // 如果消息是回复型消息
-        if (messageType.indexOf("reply") === 0) {
+        if (messageType && messageType.indexOf("reply") === 0) {
             let split = messageType.split('-');
             let replyMessageId = split[split.length - 1];
             let replyIcon = $('<div class="d-inline-block">').append('<span class="fa fa-reply">');
