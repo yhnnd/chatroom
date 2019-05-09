@@ -21,7 +21,8 @@ public class UserDAO {
                     String role = resultSet.getString("role");
                     String gender = resultSet.getString("gender");
                     String avatar = resultSet.getString("avatar");
-                    user = new User(userid, name, "classified", gender, avatar, role);
+                    String email = resultSet.getString("email");
+                    user = new User(userid, name, "classified", gender, avatar, role, email);
                 }
             }
         } catch (Exception e) {
@@ -92,8 +93,10 @@ public class UserDAO {
     public int InsertUser(String username, String password, int age, String gender, String email) {
         int result = 0;
         DB db = new DB();
-        String sql = "insert into user(name,password,age,gender,role) " +
-                "values('" + username + "','" + password + "'," + age + ",'" + gender + "','normal')";
+        String sql = "insert into user(name,password,age,gender,role,email) " +
+                "values('" + username + "','" + password + "'," + age + ",'" + gender + "'," +
+                "'normal'," +
+                "'" + email + "')";
         try {
             result = db.executeUpdate(sql);
             db.close();
