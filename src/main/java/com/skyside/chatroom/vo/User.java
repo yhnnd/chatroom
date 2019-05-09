@@ -7,6 +7,7 @@ public class User {
     private String gender;
     private String avatar;
     private String role;
+    private String email;
 
     public int getUserid() {
         return userid;
@@ -56,6 +57,14 @@ public class User {
         this.role = role;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public User(int userid, String username, String password, String gender, String avatar, String role) {
         this.userid = userid;
         this.username = username;
@@ -63,5 +72,15 @@ public class User {
         this.gender = gender;
         this.avatar = avatar;
         this.role = role;
+    }
+
+    public User(int userid, String username, String password, String gender, String avatar, String role, String email) {
+        this.userid = userid;
+        this.username = username;
+        this.password = password;
+        this.gender = gender;
+        this.avatar = avatar;
+        this.role = role;
+        this.email = email;
     }
 }
